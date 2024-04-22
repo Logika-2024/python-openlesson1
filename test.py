@@ -1,10 +1,11 @@
-points = 0
-question_number = 1
-right_question_counter = 0
-quest_in_raw= 5
+points = 0 # бали гравця
+question_number = 1 # порядковий номер питання
+right_question_counter = 0 # рахує правільні відповіді підряд
+supergame_start_score = 3 # З якої правільні відповіді підряд починається супер_гра (+2 бали)
 
 # на якій мові задаємо питання
-lang = input("На каком языке играем ? (eng / укр)")
+lang = input("На каком языке играем ? (eng / будь що інше)")
+
 if lang == "eng":
   ans = input(str(question_number) + " - What color is the Sun ? (1 - yellow / 2 - black )")
 else:
@@ -12,7 +13,8 @@ else:
 
 
 if ans == "1":
-  if right_question_counter >= quest_in_raw:
+  if right_question_counter >= supergame_start_score:
+    print("super_game_mode + 2 scores")
     points = points + 2
   else:
     points = points + 1
@@ -20,13 +22,13 @@ if ans == "1":
   if lang == "eng":
     print("Yes, you are right !")
   else:
-    print("Да, ты прав !")
+    print("Так, ти прав !")
 else:
   right_question_counter = 0
   if lang == "eng":
     print("wrong answer !")
   else:
-    print("неправильный ответ !")
+    print("невірна відповідь !")
 
 question_number = question_number + 1
 if lang == "eng":
@@ -34,8 +36,9 @@ if lang == "eng":
 else: 
   ans = input(str(question_number) + " - Вода мокрая ? (1 - да / 2 - нет)")
 
-if ans == "да":
-  if right_question_counter >= quest_in_raw:
+if ans == "1":
+  if right_question_counter >= supergame_start_score:
+    print("super_game_mode + 2 scores")
     points = points + 2
   else:
     points = points + 1
@@ -44,7 +47,7 @@ if ans == "да":
   if lang == "eng":
     print("Yes, you are right !")
   else:
-    print("Да, ты прав !")
+    print("Так, ти прав !")
 
 else:
   right_question_counter = 0
@@ -52,8 +55,8 @@ else:
   if lang == "eng":
     print("wrong answer !")
   else:
-    print("неправильный ответ !")
+    print("невірна відповідь !")
 
 # варіанти відповіді
-print("Молодець, ви виграли - ваши бали: " + str(points))
-print("Молодець, ви виграли - ваши бали: ", points)
+print("Молодець, ви виграли - " + str(points) + " балів")
+print("Молодець, ви виграли - ", points, " балів")
