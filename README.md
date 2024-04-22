@@ -1,7 +1,10 @@
 # python-openlesson1
-Example of final code for game (module 2)
+## Example of final code for game (module 2)
+	dragon-fighter.py
+	rogalik.py
+	school-escape.py
 
-Один із варіантів - Потрібно розробити гру квіз (опитування).
+## Один із варіантів - Потрібно розробити гру квіз (опитування).
 (приклад у файлі - kahoot-game.py)
 
 Вимоги:
