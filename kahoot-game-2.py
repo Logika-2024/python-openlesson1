@@ -7,6 +7,13 @@ supergame_start_score = 3 # З якої правільні відповіді п
 # на якій мові задаємо питання
 lang = input("На каком языке играем ? (eng / будь що інше)")
 
+def proper_lang_ans(arg, ans_true, ans_false):
+  if arg == "eng":
+    print(ans_true)
+  else:
+    print(ans_false)
+
+
 if lang == "eng":
   ans = input(str(question_number) + " - What color is the Sun ? (1 - yellow / 2 - black )")
 else:
@@ -20,16 +27,11 @@ if ans == "1":
   else:
     points = points + 1
   right_question_counter = right_question_counter + 1
-  if lang == "eng":
-    print("Yes, you are right !")
-  else:
-    print("Так, ти прав !")
+  proper_lang_ans(lang, "Yes, you are right !", "Так, ти прав !")
+
 else:
   right_question_counter = 0
-  if lang == "eng":
-    print("wrong answer !")
-  else:
-    print("невірна відповідь !")
+  proper_lang_ans(lang, "wrong answer !", "невірна відповідь !")
 
 question_number = question_number + 1
 if lang == "eng":
@@ -45,19 +47,12 @@ if ans == "1":
     points = points + 1
   right_question_counter = right_question_counter + 1
   # на якій мові відповідаємо
-  if lang == "eng":
-    print("Yes, you are right !")
-  else:
-    print("Так, ти прав !")
+  proper_lang_ans(lang, "Yes, you are right !", "Так, ти прав !")
 
 else:
   right_question_counter = 0
   # на якій мові відповідаємо
-  if lang == "eng":
-    print("wrong answer !")
-  else:
-    print("невірна відповідь !")
+  proper_lang_ans(lang, "wrong answer !", "невірна відповідь !")
 
 # варіанти відповіді
-print("Молодець, ви виграли - " + str(points) + " балів")
-print("Молодець, ви виграли - ", points, " балів")
+proper_lang_ans(lang, "Welldone, you win - " + str(points) + " points", "Молодець, ви виграли - " + str(points) + " балів")
