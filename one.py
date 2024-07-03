@@ -19,7 +19,6 @@ else:
 
 vidpovidy = input("Земля кругла (так - ні)")
 if vidpovidy == "так":
-
   points = points + 1
   good_answ = good_answ + 1
   print("Вірно, в тебе ", points, "балів")
